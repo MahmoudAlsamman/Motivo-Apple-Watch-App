@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller alwaysBounce="YES" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Motivo">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="XlD-4p-AIM">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Loading . . . ." textAlignment="center" numberOfLines="0" id="PvJ-Qb-vlM" userLabel="quoteLabel"/>
+                                <label height="60" alignment="right" verticalAlignment="bottom" textAlignment="left" numberOfLines="0" id="nn8-It-Cg6" userLabel="authorLabel">
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                </label>
+                            </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="bvW-rx-ZNI">
+                                    <connections>
+                                        <action selector="tapped:" destination="AgC-eL-Hgc" id="Fl8-5n-ivF"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="quoteAuthor" destination="nn8-It-Cg6" id="owi-Sp-BUE"/>
+                        <outlet property="quoteText" destination="PvJ-Qb-vlM" id="YB3-Gc-fp8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="255" y="-3"/>
+        </scene>
+    </scenes>
+</document>
