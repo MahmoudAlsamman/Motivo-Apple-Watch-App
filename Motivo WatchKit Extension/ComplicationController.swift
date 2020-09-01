@@ -11,13 +11,12 @@ import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    lazy var data = QuotesData.shared
+    let manager = QuotesManager.shared
     
     override init() {
         super.init()
-        loadQuotes()
+        manager.updateQuotes()
     }
-    
     
     // Not supporting Timetravel
     func getSupportedTimeTravelDirections(for complication: CLKComplication,
@@ -70,21 +69,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     //MARK: Helpers
     
-    private func loadQuotes() {
-        data.fetchNewQuotes { _ in
-            self.reloadActiveComplications()
-        }
-    }
-    
-    private func reloadActiveComplications() {
-        let server = CLKComplicationServer.sharedInstance()
-        server.activeComplications?.forEach { server.reloadTimeline(for: $0) }
-    }
-    
     // Creates the correct template according to the complication's family
     private func createTemplate(for complication: CLKComplication) -> CLKComplicationTemplate? {
-        let quote = data.getRandomShortQuote()
-        print(quote)
+        let quote = manager.getRandomShortQuote()
         switch complication.family {
         case .modularLarge:
             return createModularLargeTemplate(with: quote)
@@ -111,7 +98,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     //MARK: - Create Templates
-    
     
     private func createModularLargeTemplate(with quote: String) -> CLKComplicationTemplate {
         // Set providers for the template
