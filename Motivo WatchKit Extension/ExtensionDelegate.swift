@@ -9,10 +9,10 @@
 import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
-    
+    let manager = QuotesManager.shared
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
-        scheduleBackgroundRefreshTasks()
+        manager.updateQuotes()
     }
     
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
@@ -22,7 +22,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 // Be sure to complete the background task once you’re done.
-                fetchNewQuotes()
+                manager.updateQuotes()
                 backgroundTask.setTaskCompletedWithSnapshot(false)
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
@@ -43,34 +43,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // make sure to complete unhandled task types
                 task.setTaskCompletedWithSnapshot(false)
             }
-        }
-    }
-    
-    private func fetchNewQuotes() {
-        QuotesData.shared.fetchNewQuotes { [weak self] _ in
-            self?.updateTimelineEntries()
-            self?.scheduleBackgroundRefreshTasks()
-        }
-    }
-    
-    private func updateTimelineEntries() {
-        let server = CLKComplicationServer.sharedInstance()
-        server.activeComplications?.forEach { server.reloadTimeline(for: $0) }
-    }
-    
-    private func scheduleBackgroundRefreshTasks() {
-        // Get the shared extension object.
-        let watchExtension = WKExtension.shared()
-        // updates after 4 hours.
-        let targetUpdateTime = Date(timeIntervalSinceNow: 4 * 60 * 60)
-        // Schedule the background refresh task.
-        watchExtension.scheduleBackgroundRefresh(withPreferredDate: targetUpdateTime, userInfo: nil) { (error) in
-            // Check for errors.
-            if let error = error {
-                print("*** background refresh error occurred: \(error.localizedDescription) ***")
-                return
-            }
-            print("*** Background Task Completed Successfully! ***")
         }
     }
 }

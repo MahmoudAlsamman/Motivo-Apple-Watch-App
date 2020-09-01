@@ -13,10 +13,12 @@
                     <items>
                         <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="XlD-4p-AIM">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Loading . . . ." textAlignment="center" numberOfLines="0" id="PvJ-Qb-vlM" userLabel="quoteLabel"/>
+                                <label alignment="center" verticalAlignment="center" text="Loading . . . ." textAlignment="center" numberOfLines="0" id="PvJ-Qb-vlM" userLabel="quoteLabel">
+                                    <fontDescription key="font" type="italicSystem" pointSize="16"/>
+                                </label>
                                 <label height="60" alignment="right" verticalAlignment="bottom" textAlignment="left" numberOfLines="0" id="nn8-It-Cg6" userLabel="authorLabel">
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                    <fontDescription key="font" type="italicSystem" pointSize="14"/>
                                 </label>
                             </items>
                             <gestureRecognizers>
