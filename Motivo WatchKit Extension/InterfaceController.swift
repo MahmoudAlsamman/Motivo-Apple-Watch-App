@@ -11,10 +11,10 @@ import WatchKit
 
 class InterfaceController: WKInterfaceController {
     
-    let manager = QuotesManager.shared
+    let quotesManager = QuotesDataManager.shared
     
-    @IBOutlet weak var quoteText: WKInterfaceLabel!
-    @IBOutlet weak var quoteAuthor: WKInterfaceLabel!
+    @IBOutlet weak var quoteTextLabel: WKInterfaceLabel!
+    @IBOutlet weak var quoteAuthorLabel: WKInterfaceLabel!
     
     override func willActivate() {
         super.willActivate()
@@ -26,12 +26,9 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func updateViewWithNewQuote() {
-        manager.getLongQuote { [weak self] quote in
-            DispatchQueue.main.async {
-                self?.quoteText.setText(quote.text)
-                self?.quoteAuthor.setText(quote.author)
-            }
+        quotesManager.getLongQuote { [weak self] quote in
+            self?.quoteTextLabel.setText(quote?.text)
+            self?.quoteAuthorLabel.setText(quote?.author)
         }
     }
-    
 }

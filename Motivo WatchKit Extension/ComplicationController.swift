@@ -6,29 +6,16 @@
 //  Copyright © 2020 Mahmoud Alsamman. All rights reserved.
 //
 
-
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    let manager = QuotesManager.shared
+    let manager = QuotesDataManager.shared
     
-    override init() {
-        super.init()
-        manager.updateQuotes()
-    }
-    
-    // Not supporting Timetravel
-    func getSupportedTimeTravelDirections(for complication: CLKComplication,
-                                          withHandler handler:@escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        handler([])
-    }
-    
-    // Define whether the complication is visible when the watch is unlocked.
+    // Define whether complication data is visible when Watch is locked.
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
         handler(.showOnLockScreen)
     }
-    
     
     // MARK: Register Placeholder
     
@@ -59,7 +46,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         // Create a timeline entry for every five minutes from the starting time.
         // Stop once you reach the limit or the end date.
-        while (current.compare(endDate) == .orderedAscending) && (entries.count < limit) {
+        while (current.compare(endDate) == .orderedAscending) &&
+                (entries.count < limit) {
             guard let timeline = createTimelineEntry(for: complication, and: current) else { return }
             entries.append(timeline)
             current = current.addingTimeInterval(fiveMinutes)
@@ -81,7 +69,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return createGraphicBezelTemplate(with: quote)
         case .graphicRectangular:
             return createGraphicRectangularTemplate(with: quote)
-        case .graphicCircular, .modularSmall, .utilitarianSmall, .utilitarianSmallFlat, .circularSmall, .graphicCorner, .extraLarge:
+        case .graphicCircular, .modularSmall, .utilitarianSmall, .utilitarianSmallFlat, .circularSmall, .graphicCorner, .extraLarge, .graphicExtraLarge:
             return nil
         @unknown default:
             fatalError("*** Unknown Complication Family ***")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D27239E625CF4597004A0DD4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27239E525CF4597004A0DD4 /* APIClient.swift */; };
 		D29BA8EC24DDCDEC005C9F09 /* Motivo.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D29BA8EB24DDCDEC005C9F09 /* Motivo.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D29BA8FB24DDCDF1005C9F09 /* Motivo.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D29BA8FA24DDCDF1005C9F09 /* Motivo.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D29BA90024DDCDF1005C9F09 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BA8FF24DDCDF1005C9F09 /* InterfaceController.swift */; };
@@ -14,9 +15,10 @@
 		D29BA90624DDCDF1005C9F09 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BA90524DDCDF1005C9F09 /* ComplicationController.swift */; };
 		D29BA91924DDCEAD005C9F09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29BA91824DDCEAD005C9F09 /* Assets.xcassets */; };
 		D29BA91D24DDCEC0005C9F09 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BA91C24DDCEC0005C9F09 /* Quote.swift */; };
-		D29BA91F24DDCEC7005C9F09 /* QuotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BA91E24DDCEC7005C9F09 /* QuotesManager.swift */; };
+		D29BA91F24DDCEC7005C9F09 /* QuotesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BA91E24DDCEC7005C9F09 /* QuotesDataManager.swift */; };
 		D29BA92524DDCF73005C9F09 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29BA92424DDCF73005C9F09 /* Interface.storyboard */; };
 		D2A0498724E08F0A009BDAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A0498624E08F0A009BDAB0 /* Assets.xcassets */; };
+		D2A939EA25CF2BC300D46A80 /* QuotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A939E925CF2BC300D46A80 /* QuotesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D27239E525CF4597004A0DD4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D29BA8E724DDCDEC005C9F09 /* Motivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BA8EB24DDCDEC005C9F09 /* Motivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BA8F524DDCDF1005C9F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,9 +75,10 @@
 		D29BA90924DDCDF3005C9F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29BA91824DDCEAD005C9F09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D29BA91C24DDCEC0005C9F09 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
-		D29BA91E24DDCEC7005C9F09 /* QuotesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesManager.swift; sourceTree = "<group>"; };
+		D29BA91E24DDCEC7005C9F09 /* QuotesDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesDataManager.swift; sourceTree = "<group>"; };
 		D29BA92424DDCF73005C9F09 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		D2A0498624E08F0A009BDAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2A939E925CF2BC300D46A80 /* QuotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +92,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D209275325CF0F8200395E14 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D29BA91E24DDCEC7005C9F09 /* QuotesDataManager.swift */,
+				D27239E525CF4597004A0DD4 /* APIClient.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D209275425CF0FA100395E14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D29BA91C24DDCEC0005C9F09 /* Quote.swift */,
+				D2A939E925CF2BC300D46A80 /* QuotesResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D29BA8E024DDCDEC005C9F09 = {
 			isa = PBXGroup;
 			children = (
+				D209275425CF0FA100395E14 /* Models */,
+				D209275325CF0F8200395E14 /* Managers */,
 				D29BA8EF24DDCDEC005C9F09 /* Motivo WatchKit App */,
 				D29BA8FE24DDCDF1005C9F09 /* Motivo WatchKit Extension */,
 				D29BA8E824DDCDEC005C9F09 /* Products */,
@@ -123,8 +147,6 @@
 				D29BA8FF24DDCDF1005C9F09 /* InterfaceController.swift */,
 				D29BA90524DDCDF1005C9F09 /* ComplicationController.swift */,
 				D29BA90124DDCDF1005C9F09 /* ExtensionDelegate.swift */,
-				D29BA91E24DDCEC7005C9F09 /* QuotesManager.swift */,
-				D29BA91C24DDCEC0005C9F09 /* Quote.swift */,
 				D29BA91824DDCEAD005C9F09 /* Assets.xcassets */,
 				D29BA90924DDCDF3005C9F09 /* Info.plist */,
 			);
@@ -192,7 +214,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Mahmoud Alsamman";
 				TargetAttributes = {
 					D29BA8E624DDCDEC005C9F09 = {
@@ -259,10 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29BA90624DDCDF1005C9F09 /* ComplicationController.swift in Sources */,
-				D29BA91F24DDCEC7005C9F09 /* QuotesManager.swift in Sources */,
+				D27239E625CF4597004A0DD4 /* APIClient.swift in Sources */,
+				D29BA91F24DDCEC7005C9F09 /* QuotesDataManager.swift in Sources */,
 				D29BA90224DDCDF1005C9F09 /* ExtensionDelegate.swift in Sources */,
 				D29BA91D24DDCEC0005C9F09 /* Quote.swift in Sources */,
 				D29BA90024DDCDF1005C9F09 /* InterfaceController.swift in Sources */,
+				D2A939EA25CF2BC300D46A80 /* QuotesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +332,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -368,6 +393,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

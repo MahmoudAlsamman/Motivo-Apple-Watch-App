@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -31,8 +30,8 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="quoteAuthor" destination="nn8-It-Cg6" id="owi-Sp-BUE"/>
-                        <outlet property="quoteText" destination="PvJ-Qb-vlM" id="YB3-Gc-fp8"/>
+                        <outlet property="quoteAuthorLabel" destination="nn8-It-Cg6" id="owi-Sp-BUE"/>
+                        <outlet property="quoteTextLabel" destination="PvJ-Qb-vlM" id="YB3-Gc-fp8"/>
                     </connections>
                 </controller>
             </objects>

@@ -6,8 +6,6 @@
 //  Copyright © 2020 Mahmoud Alsamman. All rights reserved.
 //
 
-import Foundation
-
 struct Quote: Codable {
     var text: String
     var author: String?
