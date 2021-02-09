@@ -8,23 +8,21 @@
 
 import WatchKit
 
-
 class InterfaceController: WKInterfaceController {
-    
     let quotesManager = QuotesDataManager.shared
-    
-    @IBOutlet weak var quoteTextLabel: WKInterfaceLabel!
-    @IBOutlet weak var quoteAuthorLabel: WKInterfaceLabel!
-    
+
+    @IBOutlet var quoteTextLabel: WKInterfaceLabel!
+    @IBOutlet var quoteAuthorLabel: WKInterfaceLabel!
+
     override func willActivate() {
         super.willActivate()
         updateViewWithNewQuote()
     }
-    
-    @IBAction func tapped(_ sender: Any) {
+
+    @IBAction func tapped(_: Any) {
         updateViewWithNewQuote()
     }
-    
+
     private func updateViewWithNewQuote() {
         quotesManager.getLongQuote { [weak self] quote in
             self?.quoteTextLabel.setText(quote?.text)

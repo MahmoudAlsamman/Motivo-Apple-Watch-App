@@ -6,9 +6,8 @@
 //  Copyright © 2020 Mahmoud Alsamman. All rights reserved.
 //
 
-import WatchKit
 import ClockKit
-
+import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
@@ -16,12 +15,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Perform any final initialization of your application.
         scheduleBackgroundRefreshTasks()
     }
-    
+
     func reloadTimelineEntries() {
         let server = CLKComplicationServer.sharedInstance()
         server.activeComplications?.forEach { server.reloadTimeline(for: $0) }
     }
-    
+
     func scheduleBackgroundRefreshTasks() {
         // Get the shared extension object.
         let watchExtension = WKExtension.shared()
@@ -34,7 +33,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-    
+
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
         for task in backgroundTasks {
