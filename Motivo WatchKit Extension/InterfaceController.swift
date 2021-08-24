@@ -9,15 +9,22 @@
 import WatchKit
 
 class InterfaceController: WKInterfaceController {
+    
+    // MARK: - Properties
+    
     let quotesManager = QuotesDataManager.shared
 
     @IBOutlet var quoteTextLabel: WKInterfaceLabel!
     @IBOutlet var quoteAuthorLabel: WKInterfaceLabel!
 
+    // MARK: - LifeCycle
+    
     override func willActivate() {
         super.willActivate()
         updateViewWithNewQuote()
     }
+    
+    // MARK: - Methods
 
     @IBAction func tapped(_: Any) {
         updateViewWithNewQuote()

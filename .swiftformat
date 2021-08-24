@@ -115,9 +115,9 @@
 --disable preferKeyPath                # Convert trivial map { $0.foo } closures to keyPath-based syntax.
 --disable redundantRawValues           # Remove redundant raw string values for enum cases.
 --disable redundantType                # Remove redundant type from variable declarations.
---disable sortedImports                # Sort import statements alphabetically.
+--enable sortedImports                # Sort import statements alphabetically.
 --disable wrap                         # Wrap lines that exceed the specified maximum width. Options: --maxwidth
---disable wrapArguments                # Align wrapped function arguments or collection elements. Options: --wraparguments, --wrapparameters,  --wrapcollections,  --closingparen
+--enable wrapArguments                # Align wrapped function arguments or collection elements. Options: --wraparguments, --wrapparameters,  --wrapcollections,  --closingparen
 --disable wrapAttributes               # Wrap @attributes onto a separate line, or keep them on the same line.
 --disable wrapSwitchCases              # Writes one switch case per line.
 --disable wrapEnumCases                # Writes one enum case per line.

@@ -9,6 +9,7 @@
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
+    
     let manager = QuotesDataManager.shared
 
     // Define whether complication data is visible when Watch is locked.
@@ -84,7 +85,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return entry
     }
 
-    // MARK: - Create Templates
+    // MARK: - Templates
 
     private func createModularLargeTemplate(with quote: String) -> CLKComplicationTemplate {
         // Set providers for the template
